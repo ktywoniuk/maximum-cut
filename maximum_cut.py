@@ -22,6 +22,7 @@ import networkx as nx
 import matplotlib
 matplotlib.use("agg")
 from matplotlib import pyplot as plt
+import dwave.inspector
 
 # ------- Set up our graph -------
 
@@ -53,6 +54,7 @@ response = sampler.sample_qubo(Q,
                                chain_strength=chainstrength,
                                num_reads=numruns,
                                label='Example - Maximum Cut')
+dwave.inspector.show(response)
 
 # ------- Print results to user -------
 print('-' * 60)
